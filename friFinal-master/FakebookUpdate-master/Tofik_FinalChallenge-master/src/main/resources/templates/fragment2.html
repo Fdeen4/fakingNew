@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org.thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/ust.css">
+</head>
+<body>
+
+<div th:fragment="navi">
+
+    <div class="header1">
+        <div id="img3" class="header1"><a th:href="@{/home}"><img src="/img/logo2.png" id="img3"/></a></div>
+        <div id="searcharea" class="header1"><input placeholder="search here..." type="text" id="searchbox"/></div>
+
+        <div id="profilearea1"class="header1" sec:authorize="isAnonymous()">
+            <a class="nav-link" th:href="@{/register}"><p10>Sign Up  |</p10></a>
+        </div>
+
+        <div   id="profilearea4"class="header1" sec:authorize="isAnonymous()">
+            <a class="nav-link" th:href="@{/login}"><p10>Log In   |</p10></a>
+        </div>
+
+        <div id="profilearea5"class="header1" sec:authorize="isAnonymous()">
+            <a class="nav-link" th:href="@{/manage/users}"><p10>Administrator</p10></a>
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
